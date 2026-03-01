@@ -1,0 +1,30 @@
+{% extends "bases/bases.html" %}
+
+{% block title %}
+    Lista de Jogador
+{% endblock %}
+
+{% block menu %}
+    <ul>
+        <li><a href="{{ url_for("jogador.index") }}">Página principal</a></li>
+        <li><a href="{{ url_for("jogador.index") }}">Cadastrar Jogador</a></li>
+    </ul>
+{% endblock %}
+
+{% block display %}
+    <h2>Lista de jogadores</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

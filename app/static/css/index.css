@@ -30,7 +30,7 @@ main {
     display: flex;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
@@ -49,7 +49,7 @@ h2{
     }
 
     & li {
-        background:#ffd700;
+        background: #ffd700;
         font-weight: bold;
         font-size: 1.6rem;
         padding: 0.25rem;
@@ -57,10 +57,62 @@ h2{
 }
 
 #content-display {
-    background: #000000;
+    background: #fff;
+    color: #000;
     margin: 0.4rem;
     padding: 1rem;
     width: 120rem;
+}
+
+table {
+    border: 1px solid;
+    width: 100%;
+    text-align: center;
+}
+
+thead {
+    background: forestgreen;
+    color: white;
+}
+
+#nome {
+    text-align: left;
+    font-weight: bold;
+    padding: 0.3rem;
+}
+
+#nacao {
+    text-align: left;
+    font-weight: bold;
+    padding: 0.3rem;
+}
+
+#GK {
+    background: orange;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+}
+
+#SW, #SB, #CB {
+    background: Blue;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+}
+
+#DMF, #CMF, #AMF, #SMF, #WB {
+    background: forestgreen;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+}
+
+#WF, #SS, #CF {
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
 }
 
 footer {

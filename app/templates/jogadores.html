@@ -7,24 +7,228 @@
 {% block menu %}
     <ul>
         <li><a href="{{ url_for("jogador.index") }}">Página principal</a></li>
-        <li><a href="{{ url_for("jogador.index") }}">Cadastrar Jogador</a></li>
+        <li><a href="{{ url_for("jogador.cadastrar_jogador") }}">Cadastrar Jogador</a></li>
     </ul>
 {% endblock %}
 
 {% block display %}
     <h2>Lista de jogadores</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
+
+    <section id="goleiros">
+        <h3>Goleiros</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in goleiros %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="zagueriros">
+        <h3>Zagueiros</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in zagueiros %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="laterais">
+        <h3>Laterais</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in lateral %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="meio_campo_defesivo">
+        <h3>Meio Campo Defesivo</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in meio_campo_defesivo %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="meio_campo_central">
+        <h3>Meio Campo Central</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in meio_campo_central %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="meio_campo_ofensivo">
+        <h3>Meio Campo Ofensivo</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in meio_campo_ofensivo %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="elenco">
+        <h3>Elenco</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nação</th>
+                <th colspan="2">Posição</th>
+                <th>Lado</th>
+                <th>Idade</th>
+                <th>Altura</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jogador in jogadores %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td id="nome">{{ jogador.nome }}</td>
+                    <td id="nacao">{{ jogador.nacao }}</td>
+                    <td id="{{ jogador.posicao1 }}">{{ jogador.posicao1 }}</td>
+                    <td id="{{ jogador.posicao2 }}">{{ jogador.posicao2|default('', true) }}</td>
+                    <td>{{ jogador.lado_dominate }}</td>
+                    <td>{{ jogador.idade }}</td>
+                    <td>{{ "%.2f"|format(jogador.altura or 0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
 {% endblock %}

@@ -1,0 +1,45 @@
+{% extends "bases/bases.html" %}
+
+{% block menu %}
+    <ul>
+        <li><a href="{{ url_for("jogador.index") }}">Página principal</a></li>
+        <li><a href="{{ url_for("jogador.lista_jogadores") }}">Jogadores</a></li>
+    </ul>
+{% endblock %}
+
+{% block display %}
+    <form method="post" enctype="multipart/form-data">
+        <label>
+            Nome:<br>
+            <input type="text" name="nome" placeholder="Nome">
+        </label>
+        <br>
+        <label>
+            Idade:<br>
+            <input type="number" name="idade" placeholder="Idade">
+        </label>
+        <br>
+        <label>
+            Altura:<br>
+            <input type="number" name="altura" step="0.01" min="0" placeholder="Altura">
+        </label>
+        <br>
+        <label>
+            Nação:<br>
+            <input type="text" name="nacao" placeholder="Nação">
+        </label>
+        <br>
+        <label>
+            Posição:<br>
+            <input type="text" name="posicao1" placeholder="ex: CMF">
+            <input type="text" name="posicao2" placeholder="ex: CMF">
+        </label>
+        <br>
+        <label>
+            Nação:<br>
+            <input type="text" name="lado_dominate" placeholder="Lado">
+        </label>
+        <br>
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}
